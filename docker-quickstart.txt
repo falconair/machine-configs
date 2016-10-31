@@ -1,0 +1,8 @@
+sudo groupadd docker
+sudo usermod -aG docker $(whoami)
+
+sudo docker search ubuntu
+sudo docker pull ubuntu
+sudo docker create ubuntu:16.04
+sudo docker run -i -t ubuntu:16.04 /bin/bash
+

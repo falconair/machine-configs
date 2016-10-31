@@ -1,0 +1,13 @@
+Download cuDNN, 5.1 for CUDA 7.5, from https://developer.nvidia.com/rdp/cudnn-download
+
+cd /usr/local
+#the following line creates /usr/local/cuda/...
+sudo tar -zxvf ~/Downloads/cudnn-7.5-linux-x64-v5.1.tgz
+
+#add these cuda files to ld path
+sudo echo "/usr/local/cuda/lib64/" > /tmp/cuda.conf
+sudo cp /tmp/cuda.conf /etc/ld.so.conf.d/.
+sudo ldconfig
+
+#add var to .bashrc
+echo export CUDA_HOME=/usr/local/cuda >> ~/.bashrc

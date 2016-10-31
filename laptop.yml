@@ -1,0 +1,34 @@
+---
+#sudo apt install ansible
+
+- hosts: localhost
+  tasks:
+    - name: Add nvidia repo
+      apt_repository: repo='ppa:graphics-drivers/ppa'
+
+    - name: Installs list of packages
+      become: yes
+      apt: name={{item}} state=installed
+      with_items:
+        - dkms
+        - openjdk-8-jdk-headless
+        - r-base-core
+        - docker.io
+        - python-pip
+        - python3-pip
+        - python-dev
+        - python3-dev
+        - python-numpy
+        - python3-numpy
+        - nautilus-dropbox
+        - nvidia-367 #nvidia driver from graphics-drivers repo (ubuntu-dirvers autoinstall instead?)
+        - nvidia-cuda-toolkit
+
+
+#sudo ansible-playbook laptop.yml
+
+
+#Manually install:
+#-Google Chrome
+#-R-Studio
+#-Sci-kit
