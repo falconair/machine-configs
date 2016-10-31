@@ -8,5 +8,4 @@ sudo ansible-playbook laptop.yml
 docker-quickstart.txt
 cuda-quickstart.txt
 
-pip install -U scikit-learn
-pip install jupyter
+

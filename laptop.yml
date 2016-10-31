@@ -6,6 +6,18 @@
     - name: Add nvidia repo
       apt_repository: repo='ppa:graphics-drivers/ppa'
 
+    - name: Add multiverse repo
+      apt_repository: repo='deb http://download.virtualbox.org/virtualbox/debian xenial contrib'
+
+    #- name: Add Arc theme repo
+    #  apt_repository: repo='deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /'
+
+      # If error, one of:
+      # 1. sudo apt-key update
+      # 2. cd /tmp && wget http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key && sudo apt-key add - < Release.key
+    #- name: Add key for arc theme repo
+    #  apt_key: url=http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key
+
     - name: Installs list of packages
       become: yes
       apt: name={{item}} state=installed
@@ -23,6 +35,16 @@
         - nautilus-dropbox
         - nvidia-367 #nvidia driver from graphics-drivers repo (ubuntu-dirvers autoinstall instead?)
         - nvidia-cuda-toolkit
+        - compizconfig-settings-manager
+        - vagrant
+        - virtualbox
+        #- arc-theme #may have to install this without verification (manually)
+
+    - name: add some python packages
+      pip: name={{item}}
+      with_items:
+        - jupyter
+        - scikit-learn
 
 
 #sudo ansible-playbook laptop.yml
