@@ -1,8 +1,12 @@
 git config --global user.email "shahbazc@gmail.com"
 git config --global user.name "Shahbaz Chaudhary"
+git config credential.helper store
 
 
 sudo ansible-playbook laptop.yml
 
 docker-quickstart.txt
 cuda-quickstart.txt
+
+pip install -U scikit-learn
+pip install jupyter
