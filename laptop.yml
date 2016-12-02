@@ -26,12 +26,12 @@
         - openjdk-8-jdk-headless
         - r-base-core
         - docker.io
-        - python-pip
-        - python3-pip
-        - python-dev
-        - python3-dev
-        - python-numpy
-        - python3-numpy
+        #- python-pip
+        #- python3-pip
+        #- python-dev
+        #- python3-dev
+        #- python-numpy
+        #- python3-numpy
         - nautilus-dropbox
         - nvidia-367 #nvidia driver from graphics-drivers repo (ubuntu-dirvers autoinstall instead?)
         - nvidia-cuda-toolkit
@@ -40,11 +40,11 @@
         - virtualbox
         #- arc-theme #may have to install this without verification (manually)
 
-    - name: add some python packages
-      pip: name={{item}}
-      with_items:
-        - jupyter
-        - scikit-learn
+    #- name: add some python packages
+    #  pip: name={{item}}
+    #  with_items:
+    #    - jupyter
+    #    - scikit-learn
 
 
 #sudo ansible-playbook laptop.yml

@@ -3,6 +3,7 @@ git config --global user.name "Shahbaz Chaudhary"
 git config credential.helper store
 
 
+#install anaconda 3.5
 sudo ansible-playbook laptop.yml
 
 docker-quickstart.txt
